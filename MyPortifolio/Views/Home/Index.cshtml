@@ -2,7 +2,7 @@
     ViewBag.Title = "Home";
 }
 <style>
-   
+
     /* Hero Section */
 
     .hero {
@@ -14,43 +14,43 @@
         overflow: hidden;
     }
 
-    .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.2); /* subtle overlay for contrast */
-        z-index: 1;
-    }
-
-    .hero .container {
-        position: relative;
-        z-index: 2;
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-        line-height: 1.3;
-        font-weight: 700;
-    }
-
-        .hero h1 span {
-            color: #ffd700; /* gold accent */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2); /* subtle overlay for contrast */
+            z-index: 1;
         }
 
-    .hero h5 {
-        font-size: 1.25rem;
-        letter-spacing: 0.3px;
-        color: #f0f0f0;
-    }
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
 
-    .hero p {
-        max-width: 600px;
-        color: #e0e0e0;
-        font-size: 1.1rem;
-    }
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+            .hero h1 span {
+                color: #ffd700; /* gold accent */
+            }
+
+        .hero h5 {
+            font-size: 1.25rem;
+            letter-spacing: 0.3px;
+            color: #f0f0f0;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: #e0e0e0;
+            font-size: 1.1rem;
+        }
 
     /* Image Styling */
     .hero-img {
@@ -67,8 +67,6 @@
             transform: scale(1.05);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
         }
-
-
 
     /* Particle Styles */
     .particles {
@@ -91,40 +89,33 @@
     }
 
     @@keyframes float {
-        0%
+        0% {
+            transform: translateY(0) translateX(0);
+            opacity: 0.7;
+        }
 
-    {
-        transform: translateY(0) translateX(0);
-        opacity: 0.7;
-    }
+        50% {
+            transform: translateY(-50vh) translateX(20px);
+            opacity: 0.3;
+        }
 
-    50% {
-        transform: translateY(-50vh) translateX(20px);
-        opacity: 0.3;
-    }
-
-    100% {
-        transform: translateY(-100vh) translateX(-20px);
-        opacity: 0;
-    }
-
+        100% {
+            transform: translateY(-100vh) translateX(-20px);
+            opacity: 0;
+        }
     }
 
     /* Responsive Adjustments */
     @@media (max-width: 768px) {
-        .hero
+        .hero {
+            text-align: center;
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
 
-    {
-        text-align: center;
-        padding-top: 80px;
-        padding-bottom: 80px;
-    }
-
-    .hero-img {
-        margin: 20px auto 0 auto;
-    }
-
-
+        .hero-img {
+            margin: 20px auto 0 auto;
+        }
     }
 
     /* Buttons */
@@ -161,6 +152,22 @@
         vertical-align: middle;
     }
 
+    /* Project Cards Styling */
+    .project-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1) !important;
+        }
+
+    .badge-gold {
+        background-color: #ffd700;
+        color: #004aad;
+        font-weight: 700;
+    }
+
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
@@ -179,7 +186,7 @@
                 </h5>
 
                 <p class="lead mb-4">
-                    Cyber Security & Software Development Student | Software Development Graduate<br />
+                    Software Development Graduate<br />
                     Passionate About Information Technology & Life-long Learning.
                 </p>
 
@@ -188,15 +195,13 @@
                     <i class="bi bi-envelope-fill me-2"></i>Curriculum Vitae
                 </a>
 
-               
-
                 <!-- Social Icons -->
                 <div class="social-icons mt-4">
                     <a href="https://www.facebook.com/asenathi.yawa.2025" class="me-3 fs-4"><i class="bi bi-facebook"></i></a>
-                    <a href="https://wa.me/27657016578" target="_blank" class="me-3 fs-4"><i class="bi bi-whatsapp"></i></a>                 
+                    <a href="https://wa.me/27657016578" target="_blank" class="me-3 fs-4"><i class="bi bi-whatsapp"></i></a>
                     <a href="https://github.com/dashboard" class="me-3 fs-4"><i class="bi bi-github"></i></a>
                     <a href="https://linkedin.com/in/asenathi-yawa-181382293" class="fs-4"><i class="bi bi-linkedin"></i></a>
-                    <a href="mailto:yawaasenathi2003@gmail.com" class="me-3 fs-4"> <i class="bi bi-envelope-fill"></i></a>                
+                    <a href="mailto:yawaasenathi2003@gmail.com" class="me-3 fs-4"> <i class="bi bi-envelope-fill"></i></a>
                 </div>
             </div>
 
@@ -207,9 +212,108 @@
         </div>
     </div>
 </section>
+
+<!-- PROJECTS & ACHIEVEMENTS SECTION -->
+<section id="achievements" class="py-5 bg-white">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-2" style="color:#004aad;">Featured Projects & Achievements</h2>
+        <p class="text-center mb-5 text-muted">
+            Highlights from hackathons, corporate partnerships, and production deployments.
+        </p>
+
+        <div class="row justify-content-center g-4">
+            <!-- ExpoConnect AI Card -->
+            <div class="col-lg-10">
+                <div class="card project-card border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="card-body p-4 p-md-5">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between mb-3 gap-2">
+                            <span class="badge badge-gold px-3 py-2 rounded-pill fs-6">
+                                <i class="bi bi-cpu-fill me-1"></i> AI & Management Platform
+                            </span>
+                            <span class="text-muted fw-semibold">Samsung Innovation Campus Hackathon</span>
+                        </div>
+
+                        <h3 class="fw-bold mb-3" style="color:#004aad;">ExpoConnect AI</h3>
+
+                        <p class="text-secondary leading-relaxed mb-4">
+                            I built <strong>ExpoConnect AI</strong> at the Samsung Innovation Campus Hackathon. The goal was to modernise how the Eskom Expo for Young Scientists handles project submissions, judge matching, and scoring.
+                        </p>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <div class="p-3 bg-light rounded-3 h-100">
+                                    <h6 class="fw-bold text-dark mb-2"><i class="bi bi-code-square me-2 text-primary"></i>Core Innovation</h6>
+                                    <p class="small text-muted mb-0">Automated project submissions workflow and streamlined digital scoring mechanics for science expos.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 bg-light rounded-3 h-100">
+                                    <h6 class="fw-bold text-dark mb-2"><i class="bi bi-diagram-3-fill me-2 text-warning"></i>Key Engineering Focus</h6>
+                                    <p class="small text-muted mb-0">Algorithm-driven judge matching, real-time evaluation processing, and modernized submission workflows.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-primary-subtle text-primary fw-medium px-3 py-2 rounded-pill">ASP.NET Core</span>
+                            <span class="badge bg-primary-subtle text-primary fw-medium px-3 py-2 rounded-pill">C#</span>
+                            <span class="badge bg-primary-subtle text-primary fw-medium px-3 py-2 rounded-pill">AI Matching</span>
+                            <span class="badge bg-primary-subtle text-primary fw-medium px-3 py-2 rounded-pill">EF Core</span>
+                            <span class="badge bg-primary-subtle text-primary fw-medium px-3 py-2 rounded-pill">SQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Samsung Project Card -->
+            <div class="col-lg-10">
+                <div class="card project-card border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="card-body p-4 p-md-5">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between mb-3 gap-2">
+                            <span class="badge badge-gold px-3 py-2 rounded-pill fs-6">
+                                <i class="bi bi-trophy-fill me-1"></i> 1st Place Hackathon Winner & Production App
+                            </span>
+                            <span class="text-muted fw-semibold">Samsung Innovation Campus</span>
+                        </div>
+
+                        <h3 class="fw-bold mb-3" style="color:#004aad;">Samsung Solve For Tomorrow — Digital Judging & Scoring Platform</h3>
+
+                        <p class="text-secondary leading-relaxed mb-4">
+                            Co-developed and deployed a high-concurrency web-based evaluation platform for the national <strong>Samsung Solve For Tomorrow</strong> competition in South Africa. The system successfully digitalized real-time scoring, replacing manual paper workflows during the national finals.
+                        </p>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <div class="p-3 bg-light rounded-3 h-100">
+                                    <h6 class="fw-bold text-dark mb-2"><i class="bi bi-code-square me-2 text-primary"></i>Core Stack</h6>
+                                    <p class="small text-muted mb-0">ASP.NET Core MVC (C#), Entity Framework Core, Bootstrap 5, SQL Sever Database, AWS EC2.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 bg-light rounded-3 h-100">
+                                    <h6 class="fw-bold text-dark mb-2"><i class="bi bi-lightning-charge-fill me-2 text-warning"></i>Key Engineering Focus</h6>
+                                    <p class="small text-muted mb-0">Database connection pooling, async query optimization (`SaveChangesAsync`), and EC2 cloud configuration for multi-user real-time submissions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-primary-subtle text-primary fw-medium px-3 py-2 rounded-pill">ASP.NET Core</span>
+                            <span class="badge bg-primary-subtle text-primary fw-medium px-3 py-2 rounded-pill">C#</span>
+                            <span class="badge bg-primary-subtle text-primary fw-medium px-3 py-2 rounded-pill">SQL</span>
+                            <span class="badge bg-primary-subtle text-primary fw-medium px-3 py-2 rounded-pill">AWS EC2</span>
+                            <span class="badge bg-primary-subtle text-primary fw-medium px-3 py-2 rounded-pill">EF Core</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- CERTIFICATES SECTION WITH MODALS -->
 <section id="certificates" class="py-5" style="background:#f8f9fa;">
-    <div id="projects" class="container">
+    <div class="container">
         <h2 class="text-center fw-bold mb-4" style="color:#004aad;">Certificates</h2>
         <p class="text-center mb-5 text-muted">
             A collection of certifications I've earned throughout my learning journey.
@@ -221,11 +325,11 @@
                 <div class="card shadow-sm border-0 rounded-4 h-100 text-center">
                     <div class="card-body">
                         <i class="bi bi-patch-check-fill fs-1 mb-3" style="color:#0072ff;"></i>
-                        <h5 class="fw-semibold">Diploma In Information Technology Certificate</h5>                        
+                        <h5 class="fw-semibold">Diploma In Information Technology Certificate</h5>
                         <p class="text-muted">
-                            <img src="~/images/nmuicon.png" class="platform-logo" />                        
+                            <img src="~/images/nmuicon.png" class="platform-logo" />
                         </p>
-                                           <!-- VIEW BUTTON -->
+                        <!-- VIEW BUTTON -->
                         <button class="btn btn-primary btn-sm px-3 rounded-pill"
                                 data-bs-toggle="modal"
                                 data-bs-target="#certModal1">
@@ -262,9 +366,7 @@
                         <h5 class="fw-semibold">Student Merit Award(2023)</h5>
                         <p class="text-muted">
                             <img src="~/images/nmuicon.png" class="platform-logo" />
-
                         </p>
-
                         <!-- VIEW BUTTON -->
                         <button class="btn btn-primary btn-sm px-3 rounded-pill"
                                 data-bs-toggle="modal"
@@ -283,9 +385,7 @@
                         <h5 class="fw-semibold">Student Merit Award(2024)</h5>
                         <p class="text-muted">
                             <img src="~/images/nmuicon.png" class="platform-logo" />
-
                         </p>
-
                         <!-- VIEW BUTTON -->
                         <button class="btn btn-primary btn-sm px-3 rounded-pill"
                                 data-bs-toggle="modal"
@@ -304,9 +404,7 @@
                         <h5 class="fw-semibold">Cyber Awareness Programme Certificate</h5>
                         <p class="text-muted">
                             <img src="~/images/nmuicon.png" class="platform-logo" />
-
                         </p>
-
                         <!-- VIEW BUTTON -->
                         <button class="btn btn-primary btn-sm px-3 rounded-pill"
                                 data-bs-toggle="modal"
@@ -324,9 +422,7 @@
                         <h5 class="fw-semibold">Ikamva resident award</h5>
                         <p class="text-muted">
                             <img src="~/images/nmuicon.png" class="platform-logo" />
-
                         </p>
-
                         <!-- VIEW BUTTON -->
                         <button class="btn btn-primary btn-sm px-3 rounded-pill"
                                 data-bs-toggle="modal"
@@ -336,10 +432,10 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
+
 <!-- Certificate Modal 1 -->
 <div class="modal fade" id="certModal1" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -355,7 +451,6 @@
     </div>
 </div>
 
-
 <!-- Certificate Modal 2 -->
 <div class="modal fade" id="certModal2" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -363,7 +458,7 @@
             <div class="modal-header">
                 <h5 class="modal-title fw-semibold">Certificate Title 2</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>           
+            </div>
             <iframe src="/certificates/asenathiyawa-cyber security --certificate (1).pdf"
                     style="width:100%; height:80vh; border:0; border-radius:12px;">
             </iframe>
@@ -378,7 +473,7 @@
             <div class="modal-header">
                 <h5 class="modal-title fw-semibold">Certificate Title 3</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>          
+            </div>
             <iframe src="/certificates/student merit award_2023.pdf"
                     style="width:100%; height:80vh; border:0; border-radius:12px;">
             </iframe>
@@ -416,6 +511,7 @@
     </div>
 </div>
 
+<!-- Certificate Modal 6 -->
 <div class="modal fade" id="certModal6" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-4 border-0">
@@ -457,8 +553,8 @@
 
         <!-- Skill Item -->
         <div class="col-md-3 col-6">
-            <div class="skill-box p-3 rounded-4 shadow-sm text-center">           
-                <i class="devicon-csharp-plain colored" <span style="font-size: 35px; color: #0072ff;"></span></i>
+            <div class="skill-box p-3 rounded-4 shadow-sm text-center">
+                <i class="devicon-csharp-plain colored"><span style="font-size: 35px; color: #0072ff;"></span></i>
                 <p class="mt-2 fw-semibold">C#</p>
             </div>
         </div>
@@ -466,8 +562,7 @@
         <!-- Skill Item -->
         <div class="col-md-3 col-6">
             <div class="skill-box p-3 rounded-4 shadow-sm text-center">
-                <i class="devicon-javascript-plain colored" <span style="font-size: 35px; color: #0072ff;"></span></i>
-
+                <i class="devicon-javascript-plain colored"><span style="font-size: 35px; color: #0072ff;"></span></i>
                 <p class="mt-2 fw-semibold">Java Script</p>
             </div>
         </div>
@@ -475,27 +570,28 @@
         <!-- Skill Item -->
         <div class="col-md-3 col-6">
             <div class="skill-box p-3 rounded-4 shadow-sm text-center">
-                <i class="devicon-dotnetcore-plain colored" <span style="font-size: 35px; color: #0072ff;"></span></i>
+                <i class="devicon-dotnetcore-plain colored"><span style="font-size: 35px; color: #0072ff;"></span></i>
                 <p class="mt-2 fw-semibold">Entity Framework</p>
             </div>
         </div>
         <!-- Skill Item -->
         <div class="col-md-3 col-6">
             <div class="skill-box p-3 rounded-4 shadow-sm text-center">
-                <i class="devicon-dotnetcore-plain colored" <span style="font-size: 35px; color: #0072ff;"></span></i>
+                <i class="devicon-dotnetcore-plain colored"><span style="font-size: 35px; color: #0072ff;"></span></i>
                 <p class="mt-2 fw-semibold">MVC</p>
             </div>
         </div>
         <!-- Skill Item -->
         <div class="col-md-3 col-6">
             <div class="skill-box p-3 rounded-4 shadow-sm text-center">
-                <i class="devicon-dotnetcore-plain colored" <span style="font-size: 35px; color: #0072ff;"></span></i>
+                <i class="devicon-dotnetcore-plain colored"><span style="font-size: 35px; color: #0072ff;"></span></i>
                 <p class="mt-2 fw-semibold">Dapper</p>
             </div>
         </div>
 
     </div>
 </section>
+
 <!-- CV Modal -->
 <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
@@ -505,11 +601,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <iframe src="/certificates/asenathiyawacv.pdf" width="100%" height="600px" style="border:none;"></iframe>
+                <iframe src="/certificates/yawaasenathicv.pdf" width="100%" height="600px" style="border:none;"></iframe>
             </div>
         </div>
     </div>
 </div>
+
 <!-- About Me Section -->
 <section class="py-5">
     <div id="about" class="container">
